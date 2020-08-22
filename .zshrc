@@ -45,7 +45,7 @@ zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
 
 #derived from https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/
-zstyle ':vcs_info:git:*' formats '%F{011}'$'\Ue0a0''[%b]%u%c%m%%f'
+zstyle ':vcs_info:git:*' formats $'\Ue0a0''[%b]%u%c%m'
 
 ### Display the existence of files not yet known to VCS
 ### Source: https://github.com/zsh-users/zsh/blob/f9e9dce5443f323b340303596406f9d3ce11d23a/Misc/vcs_info-examples#L155-L170
@@ -99,7 +99,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT=$'%F{green}┌──(%B%F{blue}%n%m%b%F{green})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]${vcs_info_msg_0_}\n%F{green}└─%B%F{blue}$%b%F{reset} '
+    # PROMPT_USER_MACHINE='%F{green}┌──(%B%F{blue}%n%m%b%F{green})-'
+    # PROMPT_PATH='[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]'
+    # PROMPT_GIT='%F{011}${vcs_info_msg_0_}'
+    # PROMPT_LINE2=$'\n%F{green}└─%B%F{blue}$%b%F{reset} '
+    # PROMPT='$PROMPT_USER_MACHINE''$PROMPT_PATH''$PROMPT_GIT''$PROMPT_LINE2'
+    PROMPT=$'%F{green}┌──(%B%F{blue}%n%m%b%F{green})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]%F{011}${vcs_info_msg_0_}\n%F{green}└─%B%F{blue}$%b%F{reset} '
     RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
 
     # enable syntax-highlighting

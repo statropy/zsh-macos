@@ -1,9 +1,11 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 # zsh-macos
 zsh configuration adapted for macos based on [Kali Linux](https://kali.org) [2020.3 release](https://www.kali.org/news/kali-2020-3-release/)
 
-![zsh](https://statropy.com/img/banners/zsh-macos.png)
+[![zsh](https://statropy.com/img/banners/zsh-macos.png)](https://statropy.com/blog/kali-linux-zsh-for-macos/)
 
-This .zshrc file uses a similar config as Kali Linux, but also includes git status with the prompt.
+This .zshrc file uses a similar config as Kali Linux, but also includes git status with the prompt. [Read about the customizations I made.](https://statropy.com/blog/kali-linux-zsh-for-macos/)
 
 ## Install
 
